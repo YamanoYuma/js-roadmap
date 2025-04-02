@@ -1,0 +1,8 @@
+.btn {
+  background: #bc2131;
+  color: #fff;
+}
+
+.btn.active {
+  background: #2121bc;
+}

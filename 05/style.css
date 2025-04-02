@@ -1,0 +1,8 @@
+.btn {
+  background-color: red;
+  color: #fff;
+}
+
+.btn.active {
+  background: blue;
+}
