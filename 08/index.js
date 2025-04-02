@@ -29,21 +29,23 @@ form.addEventListener('submit', submitAlert);
 function submitAlert(e) {
   e.preventDefault();
   
-  // 入力値を取得して数値に変換
+  // 入力値を取得
   const inputValue = document.getElementById('intInput').value;
-  const intInput = parseInt(inputValue, 10);
   
-  // 数値かどうかをチェック
-  if (isNaN(intInput)) {
+  // 入力が数値として有効かチェック
+  if (isNaN(inputValue)) {
     alert(`${inputValue}は数値ではありません！1から40の範囲内の整数で入力してね！`);
     return;
   }
   
-  // 整数かどうかをチェック
-  // if (!Number.isInteger(intInput)) {
-  //   alert(`${inputValue}は整数ではありません！1から40の範囲内の整数で入力してね！`);
-  //   return;
-  // }
+  // 少数かどうかをチェック（小数点が含まれているかで判定）
+  if (inputValue.includes('.')) {
+    alert(`${inputValue}は整数ではありません！1から40の範囲内の整数で入力してね！`);
+    return;
+  }
+  
+  // 文字列を数値に変換
+  const intInput = parseInt(inputValue);
   
   // 範囲内かどうかをチェック
   if (intInput >= 1 && intInput <= 40) {
