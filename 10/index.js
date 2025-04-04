@@ -3,7 +3,6 @@ document.getElementById('form').addEventListener('submit', submitAlert);
 function submitAlert(e) {
   e.preventDefault();
 
-  // 入力値を取得し、前後の空白を削除
   const inputValue = document.getElementById('intInput').value.trim();
 
   // 空文字チェック
@@ -14,31 +13,29 @@ function submitAlert(e) {
 
   // 数値に変換
   const num = Number(inputValue);
-
-  // 数値判定
-  if (isNaN(num)) {
+  
+  //数値チェック
+  if(isNaN(num)) {
     alert(`${inputValue}は数値ではありません！1から40の範囲内の整数で入力してね！`);
     return;
   }
 
-  // 整数チェック
-  if (!Number.isInteger(num)) {
+  //整数チェック
+  if(!Number.isInteger(num)) {
     alert(`${inputValue}は整数ではありません！1から40の範囲内の整数で入力してね！`);
     return;
   }
 
-  // 範囲チェック
-  if (num < 1 || num > 40) {
+  //範囲チェック1から40
+  if(num < 1 || num > 40) {
     alert(`${num}は1から40の範囲内ではありません！1から40の範囲内の整数で入力してね！`);
     return;
   }
 
-  // 奇数・偶数判定
-  if (num % 2 === 1) {
-    alert(`${num}は奇数だよ！`);
+  //3で割り切れるかチェック
+  if(num % 3 === 0) {
+    alert("世界のナベアツ");
   } else {
-    alert(`${num}は偶数だよ`);
+    alert(`${num}が入力されたよ！`)
   }
-
-  console.log(num);
 }
