@@ -32,13 +32,13 @@ function submitAlert(e) {
     return;
   }
 
-  const text = document.getElementById('text');
+  text = document.getElementById('text');
   text.classList.remove("text-red","text-blue")
 
   if(num % 2 == 0) {
   //偶数の場合にtext-redクラスを付与
   text.classList.add("text-red");
-} else {
+} else if(num % 2 == 1) {
   //奇数の場合にtext-blueクラスを付与
   text.classList.add("text-blue");
 }
