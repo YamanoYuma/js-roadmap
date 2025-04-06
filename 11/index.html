@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+  <div class="flex flex-col items-center justify-center p-8">
+    <p class="text-center">課題11:フォームの数値によってアラートの内容を変更する③<br>
+      →バリデーションの作成の応用しバリデーション指示は同様です<br>
+      フォームに入力された整数によってアラートの表示を変更してください<br>
+      3で割り切れる場合は「世界のナベアツ」<br>
+      3で割り切れないが数値に「3」が含まれていた場合は「世界のナベアツ：入力された数値」<br>
+      その他は入力された数値
+    </p>
+    <div class="w-full max-w-xs mt-4">
+      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" id="form">
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="int">
+            数値だけだよ
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="intInput" type="text">
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit">
+            送信する
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
