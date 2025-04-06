@@ -11,22 +11,21 @@
 
 <body>
   <div class="flex flex-col items-center justify-center p-8">
-    <p class="text-center">課題12:フォームの数値によって要素に付与する効果を変更する<br>
-      適当なp要素を用意してください<br>
-      フォームに入力された整数によってp要素の文字色を変更してください<br>
-      奇数の場合は「赤」<br>
-      偶数の場合は「青」<br>
-      CSSかクラス付与かは問いません
+    <p class="text-center">課題13:フォームの値を変数に代入しアラートに表示する<br>
+      適当な変数を宣言してください<br>
+      フォームに入力された値を変数に格納してください<br>
+      変数をアラートに表示してください<br>
+      ※今後のため変数は用途によって命名することを推奨する
     </p>
     <div class="w-full max-w-xs mt-4">
       <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" id="form">
         <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="int">
-            数値だけだよ
+          <label class="block text-gray-700 text-sm font-bold mb-2">
+            この値を変数に格納して表示するよ
           </label>
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="intInput" type="text">
+            id="textInput" type="text">
         </div>
         <div class="flex items-center justify-between">
           <button
@@ -37,7 +36,6 @@
         </div>
       </form>
     </div>
-    <p class="text-2xl  font-bold mt-4" id="text">奇数の場合は「赤」<br>偶数の場合は「青」</p>
   </div>
 
   <script src="index.js"></script>
