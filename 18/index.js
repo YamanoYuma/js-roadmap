@@ -1,8 +1,10 @@
 let count = 1;
+const MAX_COUNT = 5;
+
 const intervalId = setInterval(() => {
   console.log(`表示回数：${count}`);
-  count++;
-  if (count > 5) {
+  if (count === MAX_COUNT) {
     clearInterval(intervalId);
   }
-},5000);
+  count++;
+}, 5000);
