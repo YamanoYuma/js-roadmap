@@ -1,8 +1,8 @@
-const greetingText = document.getElementById('sayHello');
+const greetingElement = document.getElementById('sayHello');
 
 function sayHello(name) {
-  hello = `こんにちは！${name}さん！`;
-  greetingText.textContent = hello;
+  const greetingMessage = `こんにちは！${name}さん！`;
+  greetingElement.textContent = hello;
 }
 
 sayHello('takeっち');
