@@ -4,33 +4,34 @@ const nextFiscalYearText = document.getElementById('nextFiscalYear');
 
 const d = new Date();
 
-// 現在時刻:hh時mm分ss秒
-const hour = d.getHours();
-const minutes = d.getMinutes();
-const seconds = d.getSeconds();
+// 時刻フォーマット関数
+const formatTime = (date) => {
+  const hour = d.getHours();
+  const minutes = String(d.getMinutes()).padStart(2, '0');
+  const seconds = String(d.getSeconds()).padStart(2, '0');
+  return  `${hour}時${minutes}分${seconds}秒`;
+}
 
-const hhmmss = `${hour}時${minutes}分${seconds}秒`;
+timeText.textContent = formatTime(d);
 
-timeText.textContent = hhmmss;
+// 日付フォーマット関数
+const formatDate = (date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const dayNames = ['日','月','火','水','木','金','土'];
+  const dayOfWeek = dayNames[date.getDay()];
+  return `${year}年${month}月${day}日(${dayOfWeek})`;
+}
 
-// 今日の日付(yyyy年mm月dd日)
-// 応用として曜日も表示
-const year = d.getFullYear();
-const month = String(d.getMonth() + 1).padStart(2, '0');
-const date = String(d.getDate() + 1).padStart(2, '0');
-const dayofweek = d.getDay();
+dateText.textContent = formatDate(d);
 
-const dayName = ['日','月','火','水','木','金','土'];
+// 年度計算用関数
+const getNextFiscalYear = (date) => {
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    const fiscalYear = month >= 4 ? year : year - 1;
+    return `${fiscalYear + 1}年`;
+};
 
-const yyyymmdd = `${year}年${month}月${date}日(${dayName[dayofweek]})`
-
-dateText.textContent = yyyymmdd;
-
-// 来年の年度(yyyy年)
-// 今年度
-const fiscalYear = month >= 4 ? year : year -1;
-
-// 来年度
-const nextFiscalYear = `${fiscalYear + 1}年`;
-
-nextFiscalYearText.textContent = nextFiscalYear;
+nextFiscalYearText.textContent = getNextFiscalYear(d);
